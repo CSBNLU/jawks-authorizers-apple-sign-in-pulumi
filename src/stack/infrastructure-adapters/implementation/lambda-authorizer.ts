@@ -11,7 +11,7 @@ interface Dependencies<Payload> {
   authorizer: JWT.API.Authorizer<Payload>;
 }
 
-interface AuthorizationGrantedContext
+export interface AuthorizationGrantedContext
   extends APIGatewayAuthorizerResultContext {
   defaultClaims: string;
   outcome: "granted";
