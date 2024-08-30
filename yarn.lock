@@ -733,10 +733,10 @@
     "@smithy/types" "^3.3.0"
     tslib "^2.6.2"
 
-"@csbnlu/jawks-authorizers-pulumi@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@csbnlu/jawks-authorizers-pulumi/-/jawks-authorizers-pulumi-0.0.3.tgz#66f8ea4cc06171bccb2a924acd9ab56dcbafe49c"
-  integrity sha512-O8OxN6pMon9po27sALnmLrExU5Frgot0yjQORJi9apWobS28KtEF5po/M+LZnWAQzvoQegGSEEoeLMt9Zx/jGA==
+"@csbnlu/jawks-authorizers-pulumi@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@csbnlu/jawks-authorizers-pulumi/-/jawks-authorizers-pulumi-0.0.6.tgz#91a21b5a9bb9fe897feba97bba96bddb56a75c44"
+  integrity sha512-jLEEUwPQ7SSc7mL7ZMVJ21NF3EoR33UAIyEm9hHJCMOF4+rS6jxWLLOhFab4dT0MyyQETNwk/mom/uxz9W//KQ==
   dependencies:
     "@aws-sdk/client-dynamodb" "^3.635.0"
     "@aws-sdk/client-secrets-manager" "^3.635.0"

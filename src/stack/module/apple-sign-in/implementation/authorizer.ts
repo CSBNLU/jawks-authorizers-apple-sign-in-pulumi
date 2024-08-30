@@ -48,6 +48,7 @@ export const create: (
             defaultClaims,
             outcome: "granted",
             payload: parsedPayload,
+            token,
           };
         } catch (error) {
           return {
