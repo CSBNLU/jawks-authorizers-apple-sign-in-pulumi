@@ -26,7 +26,7 @@ export const create: (deps: Dependencies) => (props: Props) => AuthorizerArgs =
       {
         architectures: ["arm64"],
         callback: lambdaAuthorizer.create({
-          authorizer: deps.appleSignInModule.appleSignInAuthorizer,
+          authorizer: deps.appleSignInModule.authorizer,
         }),
       },
     ),

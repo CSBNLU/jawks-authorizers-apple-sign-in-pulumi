@@ -1,8 +1,11 @@
-import { API } from "../";
+import { API } from "..";
 import * as Authorizers from "@csbnlu/jawks-authorizers-pulumi/dist/stack/module";
 import * as jose from "jose";
 
-export interface Dependencies {}
+export interface Dependencies {
+	tokenPayloadSchemaFactory: () => API.TokenPayloadSchema;
+	tokenDefaultClaimsSchemaFactory: () => API.TokenDefaultClaimsSchema;
+}
 
 export interface Props {
   appClientId: string;
@@ -10,21 +13,15 @@ export interface Props {
   jwksUri: string;
 }
 
-export const create: (
-  deps: Dependencies,
-) => (props: Props) => Authorizers.JWT.API.Authorizer<API.AppleSignInPayload> =
-  (deps) => (props) => {
+export const create: (deps: Dependencies) => (props: Props) => Authorizers.JWT.API.Authorizer<API.AppleSignInPayload> = (deps) => (props) => {
+		const { tokenPayloadSchemaFactory, tokenDefaultClaimsSchemaFactory } = deps;
     const { appClientId, issuer, jwksUri } = props;
 
     return {
       authorize: async ({ token }) => {
-        const tokenDefaultClaimsSchema =
-          API.AppleSignInTokenDefaultClaimsSchema.create({
-            appClientId,
-            issuer,
-          });
-
-        const payloadSchema = API.AppleSignInPayloadSchema.create();
+	
+				const payloadSchema = tokenPayloadSchemaFactory();
+				const tokenDefaultClaimsSchema = tokenDefaultClaimsSchemaFactory();
 
         try {
           const JWKS = jose.createRemoteJWKSet(new URL(jwksUri));

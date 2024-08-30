@@ -1,7 +1,7 @@
-import { API } from "../";
+import { API } from "..";
 import { z } from "zod";
 
-export const create = () =>
+export const create = (): API.TokenPayloadSchema =>
   z.object({
     email: z.string().email().optional(),
     email_verified: z

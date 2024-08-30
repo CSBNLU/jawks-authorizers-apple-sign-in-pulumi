@@ -4,6 +4,7 @@ export enum AppleSignInRealUserStatus {
   LIKELY_REAL = 2,
 }
 
+
 export interface AppleSignInPayload {
   email?: string;
   email_verified: boolean;

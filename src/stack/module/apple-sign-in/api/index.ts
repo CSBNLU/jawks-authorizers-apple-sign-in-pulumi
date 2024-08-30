@@ -2,6 +2,6 @@ export { AppleSignInModule } from "./apple-sign-in-module";
 export {
   AppleSignInPayload,
   AppleSignInRealUserStatus,
-} from "./apple-sign-in-payload";
-export * as AppleSignInPayloadSchema from "./apple-sign-in-payload-schema";
-export * as AppleSignInTokenDefaultClaimsSchema from "./apple-sign-in-token-default-claims-schema";
+} from "./payload";
+export { TokenPayloadSchema } from "./token-payload-schema";
+export { TokenDefaultClaimsSchema } from "./token-default-claims-schema";
