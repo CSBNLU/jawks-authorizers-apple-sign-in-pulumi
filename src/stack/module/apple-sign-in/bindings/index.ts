@@ -15,14 +15,22 @@ export interface Props {
 export const create =
   (deps: Dependencies) =>
   (props: Props): API.AppleSignInModule => {
-		const tokenDefaultClaimsSchemaFactory = () => Implementation.TokenDefaultClaimsSchema.create({ appClientId: props.appClientId, issuer: props.issuer });
-		const tokenPayloadSchemaFactory = () => Implementation.TokenPayloadSchema.create();
+    const tokenDefaultClaimsSchemaFactory = () =>
+      Implementation.TokenDefaultClaimsSchema.create({
+        appClientId: props.appClientId,
+        issuer: props.issuer,
+      });
+    const tokenPayloadSchemaFactory = () =>
+      Implementation.TokenPayloadSchema.create();
 
-    const authorizer = Implementation.Authorizer.create({ tokenDefaultClaimsSchemaFactory, tokenPayloadSchemaFactory })(props);
+    const authorizer = Implementation.Authorizer.create({
+      tokenDefaultClaimsSchemaFactory,
+      tokenPayloadSchemaFactory,
+    })(props);
 
     return {
       authorizer,
-			tokenDefaultClaimsSchemaFactory,
-			tokenPayloadSchemaFactory,
+      tokenDefaultClaimsSchemaFactory,
+      tokenPayloadSchemaFactory,
     };
   };

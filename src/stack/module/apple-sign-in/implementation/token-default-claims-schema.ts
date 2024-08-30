@@ -1,7 +1,10 @@
 import { API } from "..";
 import { z } from "zod";
 
-export const create = (props: { appClientId: string; issuer: string }): API.TokenDefaultClaimsSchema =>
+export const create = (props: {
+  appClientId: string;
+  issuer: string;
+}): API.TokenDefaultClaimsSchema =>
   z.object({
     exp: z.number(),
     iss: z.literal(props.issuer),
