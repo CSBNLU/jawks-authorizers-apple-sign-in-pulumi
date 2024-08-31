@@ -1,6 +1,6 @@
 {
   "name": "@csbnlu/jawks-authorizers-apple-sign-in-pulumi",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "devDependencies": {
     "@pulumi/aws": "^6.49.1",
     "@pulumi/aws-apigateway": "^2.6.0",
@@ -13,7 +13,7 @@
     "@aws-sdk/client-dynamodb": "^3.635.0",
     "@aws-sdk/client-secrets-manager": "^3.635.0",
     "@aws-sdk/lib-dynamodb": "^3.635.0",
-    "@csbnlu/jawks-authorizers-pulumi": "^0.0.6",
+    "@csbnlu/jawks-authorizers-pulumi": "^0.0.8",
     "aws-lambda": "^1.0.7",
     "jose": "^5.7.0",
     "zod": "^3.23.8"
